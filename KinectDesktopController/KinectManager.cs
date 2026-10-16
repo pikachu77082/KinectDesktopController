@@ -29,9 +29,6 @@ namespace KinectDesktopController
         private FaceFrameReader[] _faceReaders = new FaceFrameReader[6];
         private bool[] _faceTracked = new bool[6];
 
-        private const double ZThresholdDown = 0.55;
-        private const double ZThresholdUp = 0.50;
-        
         private double _dpiX = 1.0;
         private double _dpiY = 1.0;
 
@@ -55,7 +52,7 @@ namespace KinectDesktopController
         public KinectManager(MainWindow window)
         {
             _window = window;
-            _filter = new SignalFilter(0.2, ZThresholdDown, ZThresholdUp);
+            _filter = new SignalFilter(0.2);
         }
 
         public void Start()
